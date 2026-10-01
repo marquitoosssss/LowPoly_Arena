@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lowpoly Arena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{ "imports": { "three": "/vendor/three/build/three.module.js" } }</script>
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <div id="hud" hidden>
+    <div id="score"><span id="sMe">0</span><b id="round">Ronda 1 de 5</b><span id="sOp">0</span></div>
+    <div id="xh"><i></i><i></i><i></i><i></i></div>
+    <div id="scope"></div>
+    <div id="hit"></div>
+    <div id="hurt"></div>
+    <div id="banner"><h1></h1><p></p></div>
+    <div id="bottom">
+      <div id="hpWrap"><div id="hpBar"></div><span id="hpTxt">100</span></div>
+      <div id="weapons">
+        <div data-w="pistol">1 Desert-X</div>
+        <div data-w="sniper">2 Longshot</div>
+        <div data-w="rifle">3 ASR-9</div>
+      </div>
+      <div id="ammo">7 / 7</div>
+    </div>
+  </div>
+
+  <section class="screen" id="s-menu">
+    <h1>Lowpoly<br>Arena</h1>
+    <p>Duelo 1 contra 1 · 5 rondas · gana quien sume más</p>
+    <button id="play">Buscar partida</button>
+    <dl>
+      <dt>WASD</dt><dd>moverte</dd>
+      <dt>Shift</dt><dd>correr</dd>
+      <dt>C</dt><dd>agacharte; con Shift pulsado, deslizarte</dd>
+      <dt>Espacio</dt><dd>saltar</dd>
+      <dt>Clic izq. / der.</dt><dd>disparar / apuntar</dd>
+      <dt>1 · 2 · 3 · R</dt><dd>pistola · francotirador · fusil · recargar</dd>
+    </dl>
+  </section>
+
+  <section class="screen" id="s-wait" hidden>
+    <h2>Esperando rival…</h2>
+    <p>La partida empieza sola cuando se conecte otro jugador. Abre otra pestaña para probar.</p>
+  </section>
+
+  <section class="screen" id="s-pause" hidden>
+    <h2>Pausa</h2>
+    <p>Haz clic para volver a capturar el ratón.</p>
+  </section>
+
+  <section class="screen" id="s-end" hidden>
+    <h1 id="endTitle"></h1>
+    <p id="endSub"></p>
+    <button id="again">Jugar otra partida</button>
+  </section>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
